@@ -45,8 +45,8 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
   <div class="products-container">
     <!-- Produit 1 -->
     <div class="product">
-      <img src="https://media.discordapp.net/attachments/1328445021371895909/1417156131435970731/Capture_decran_2025-09-15_162754.png" alt="T-shirt Blanc">
-      <h2>T-shirt Blanc</h2>
+      <img src="https://media.discordapp.net/attachments/1328445021371895909/1417156131435970731/Capture_decran_2025-09-15_162754.png" alt="T-shirt Stormex Blanc">
+      <h2>T-shirt Stormex Blanc</h2>
       <p class="price">12,00 €</p>
       <div id="paypal-button-1" class="paypal-button-container"></div>
     </div>
@@ -55,7 +55,7 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
     <div class="product">
       <img src="https://media.discordapp.net/attachments/1328445021371895909/1417155997587210302/1994dc56c40.jpg" alt="T-shirt Stormex Noir">
       <h2>T-shirt Stormex Noir</h2>
-      <p class="price">15,00 €</p>
+      <p class="price">12,00 €</p>
       <div id="paypal-button-2" class="paypal-button-container"></div>
     </div>
   </div>
@@ -68,7 +68,7 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
         return actions.order.create({
           purchase_units: [{
             amount: { value: '12.00' },
-            description: 'T-shirt Blanc'
+            description: 'T-shirt Stormex Blanc'
           }]
         });
       },

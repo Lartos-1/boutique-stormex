@@ -1,11 +1,9 @@
 # boutique-stormex
 Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
-<!DOCTYPE html>
-<html lang="fr">
+<!DOCTYPE html> <html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>Boutique Stormex</title>
-  <!-- Script PayPal avec ton Client ID réel -->
   <script src="https://www.paypal.com/sdk/js?client-id=Acjrbv2wUChFfr2Wp-GDFR_7a1DzQDnTnh654DgQg3XlrK0e0e9fordJ0JuF_dqCZRW5ge-wYXAKHbnN&currency=EUR"></script>
   <style>
     body { 
@@ -37,6 +35,7 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
     .product h2 { margin: 10px 0; }
     .price { font-size: 20px; margin: 10px 0; }
     .paypal-button-container { margin-top: 20px; }
+    select { padding: 5px; font-size: 16px; width: 100%; margin-bottom: 10px; }
   </style>
 </head>
 <body>
@@ -48,6 +47,13 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
       <img src="https://media.discordapp.net/attachments/1328445021371895909/1417156131435970731/Capture_decran_2025-09-15_162754.png" alt="T-shirt Stormex Blanc">
       <h2>T-shirt Stormex Blanc</h2>
       <p class="price">12,00 €</p>
+      <label for="taille-1">Taille :</label>
+      <select id="taille-1">
+        <option value="S">S</option>
+        <option value="M" selected>M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
       <div id="paypal-button-1" class="paypal-button-container"></div>
     </div>
 
@@ -56,6 +62,13 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
       <img src="https://media.discordapp.net/attachments/1328445021371895909/1417155997587210302/1994dc56c40.jpg" alt="T-shirt Stormex Noir">
       <h2>T-shirt Stormex Noir</h2>
       <p class="price">12,00 €</p>
+      <label for="taille-2">Taille :</label>
+      <select id="taille-2">
+        <option value="S">S</option>
+        <option value="M" selected>M</option>
+        <option value="L">L</option>
+        <option value="XL">XL</option>
+      </select>
       <div id="paypal-button-2" class="paypal-button-container"></div>
     </div>
   </div>
@@ -65,10 +78,11 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
     paypal.Buttons({
       style: { layout: 'vertical', color: 'blue', shape: 'rect', label: 'paypal' },
       createOrder: function(data, actions) {
+        var taille = document.getElementById('taille-1').value;
         return actions.order.create({
           purchase_units: [{
             amount: { value: '12.00' },
-            description: 'T-shirt Stormex Blanc'
+            description: 'T-shirt Stormex Blanc - Taille ' + taille
           }]
         });
       },
@@ -84,10 +98,11 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
     paypal.Buttons({
       style: { layout: 'vertical', color: 'blue', shape: 'rect', label: 'paypal' },
       createOrder: function(data, actions) {
+        var taille = document.getElementById('taille-2').value;
         return actions.order.create({
           purchase_units: [{
             amount: { value: '12.00' },
-            description: 'T-shirt Stormex Noir'
+            description: 'T-shirt Stormex Noir - Taille ' + taille
           }]
         });
       },
@@ -101,4 +116,3 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
   </script>
 </body>
 </html>
-

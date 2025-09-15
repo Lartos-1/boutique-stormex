@@ -30,6 +30,7 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
     .product img {
       width: 100%;
       border-radius: 8px;
+      margin-bottom: 15px;
     }
     .product h2 {
       font-size: 24px;
@@ -38,10 +39,20 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
     .product .price {
       font-size: 20px;
       color: #333;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
+    }
+    .product label {
+      display: block;
+      margin: 10px 0 5px;
+    }
+    .product select, .product input[type="number"] {
+      padding: 5px;
+      font-size: 16px;
+      width: 100%;
+      margin-bottom: 10px;
     }
     #paypal-button-tshirt {
-      margin-top: 20px;
+      margin-top: 15px;
     }
   </style>
 </head>
@@ -50,18 +61,35 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
     <img src="https://media.discordapp.net/attachments/1328445021371895909/1417156130941177886/Capture_decran_2025-09-15_162807.png" alt="T-shirt Stormex Blanc">
     <h2>T-shirt Stormex Blanc</h2>
     <p class="price">12,00 €</p>
+
+    <label for="taille">Taille :</label>
+    <select id="taille">
+      <option value="S">S</option>
+      <option value="M" selected>M</option>
+      <option value="L">L</option>
+      <option value="XL">XL</option>
+    </select>
+
+    <label for="quantite">Quantité :</label>
+    <input type="number" id="quantite" value="1" min="1">
+
     <div id="paypal-button-tshirt"></div>
   </div>
 
   <script>
     paypal.Buttons({
       createOrder: function(data, actions) {
+        var taille = document.getElementById('taille').value;
+        var quantite = parseInt(document.getElementById('quantite').value);
+        var prixUnitaire = 12.00;
+        var total = (prixUnitaire * quantite).toFixed(2);
+
         return actions.order.create({
           purchase_units: [{
             amount: {
-              value: '12.00'
+              value: total
             },
-            description: 'T-shirt Stormex Blanc'
+            description: 'T-shirt Stormex Blanc - Taille ' + taille + ' - Qté: ' + quantite
           }]
         });
       },

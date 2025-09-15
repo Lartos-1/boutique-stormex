@@ -86,7 +86,7 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
       createOrder: function(data, actions) {
         return actions.order.create({
           purchase_units: [{
-            amount: { value: '15.00' },
+            amount: { value: '12.00' },
             description: 'T-shirt Stormex Noir'
           }]
         });

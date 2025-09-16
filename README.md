@@ -1,6 +1,7 @@
 # boutique-stormex
 Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
-<!DOCTYPE html> <html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <title>Boutique Stormex</title>
@@ -44,7 +45,7 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
   <div class="products-container">
     <!-- Produit 1 -->
     <div class="product">
-      <img src="https://media.discordapp.net/attachments/1328445021371895909/1417156131435970731/Capture_decran_2025-09-15_162754.png" alt="T-shirt Stormex Blanc">
+      <img src="Capture d'écran 2025-09-15 162754.png" alt="T-shirt Stormex Blanc">
       <h2>T-shirt Stormex Blanc</h2>
       <p class="price">12,00 €</p>
       <label for="taille-1">Taille :</label>

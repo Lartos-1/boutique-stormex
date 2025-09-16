@@ -5,6 +5,7 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
 <head>
   <meta charset="UTF-8">
   <title>Boutique Stormex</title>
+  <!-- Script PayPal avec ton Client ID -->
   <script src="https://www.paypal.com/sdk/js?client-id=Acjrbv2wUChFfr2Wp-GDFR_7a1DzQDnTnh654DgQg3XlrK0e0e9fordJ0JuF_dqCZRW5ge-wYXAKHbnN&currency=EUR"></script>
   <style>
     body { 
@@ -45,7 +46,8 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
   <div class="products-container">
     <!-- Produit 1 -->
     <div class="product">
-      <img src="https://media.discordapp.net/attachments/1328445021371895909/1417935852084930590/Capture_decran_2025-09-15_162754.png" alt="T-shirt Stormex Blanc">
+      <!-- Mets ton image dans un dossier images/ et renomme tshirt-blanc.png -->
+      <img src="images/tshirt-blanc.png" alt="T-shirt Stormex Blanc">
       <h2>T-shirt Stormex Blanc</h2>
       <p class="price">12,00 €</p>
       <label for="taille-1">Taille :</label>
@@ -60,7 +62,7 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
 
     <!-- Produit 2 -->
     <div class="product">
-      <img src="https://media.discordapp.net/attachments/1328445021371895909/1417155997587210302/1994dc56c40.jpg" alt="T-shirt Stormex Noir">
+      <img src="images/tshirt-noir.png" alt="T-shirt Stormex Noir">
       <h2>T-shirt Stormex Noir</h2>
       <p class="price">12,00 €</p>
       <label for="taille-2">Taille :</label>
@@ -75,7 +77,7 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
   </div>
 
   <script>
-    // Produit 1
+    // Produit 1 - T-shirt Blanc
     paypal.Buttons({
       style: { layout: 'vertical', color: 'blue', shape: 'rect', label: 'paypal' },
       createOrder: function(data, actions) {
@@ -95,7 +97,7 @@ Boutique en ligne Stormex - Vente de produits officiels avec paiement PayPal
       }
     }).render('#paypal-button-1');
 
-    // Produit 2
+    // Produit 2 - T-shirt Noir
     paypal.Buttons({
       style: { layout: 'vertical', color: 'blue', shape: 'rect', label: 'paypal' },
       createOrder: function(data, actions) {
